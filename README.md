@@ -1,32 +1,17 @@
-# Проект бота болталки на японском  
+# Language bot conversationalist
 
-## Необходимо реализовать возможность симуляции диалога дляотработки владения разговорным языком  
+## Collection and processing of information
+1. Unique user ID is saved
+2. Chat logs are saved
+3. Messages are sent to the OpenAI neural network
 
-### Шаги реализации:  
-1. Реализовать сбор информации от пользователя об:  
-    * Уровне владения языком
-    * Желаемой теме диалога
-2. На оснвоании пункта один сформировать стартовый промт
-3. Реализовать обмен информацией между ботом и нейронкой по API
+## Functional
+1. The basic prompt implements the chatbot mechanism
+2. The bot does not provide any information without a user request
+3. The bot will speak in the target language until asked otherwise.
+4. The bot does not provide translations in the native language unless explicitly asked to do so.
 
-## Пример промта от пользователя константы:
-1. Реакция от нейронки в случае ошибки ввода - в виде уточняющего вопроса
-"Я не совсем понял - ты имел ввиду это?" 
-2. В случае, если пользователь допустил ошибку, требуется объяснение на родном языке. 
-Реализовать через команду - например /dnt.
-3. Развернутые ответы - исключить односложные.
-4. Давать лексически разнообразный ответы
-5. Симуляция диалога - запросы от НС также должны быть разнообразными.
-6. Смешивать в ответе написания катаканой, хираганой и иероглифами
-7. Все вышесказанные тезисы должны опираться на уровень владения.
-
-## Пример промта от пользователя переменные:
-1. Уровень владения языком
-2. Язык носителя
-3. Менять стиль написания по запросу - реализовать через комманду. 
-По результату отработки сеть должна давать ответ в другом стиле написания 
-(Иероглифы, катакана и хирагана)
-4. Реализовать снижение уровня языка при диалоге
-
-### Чего мне не хватает:
-1. Не умею в API - нужно отработать Rest
+## Architecture
+1. The logic of the objects is in the file "class_.py"
+2. Logs and database are deployed in the "./.user_log" folder in the project directory
+3. See the file for DB metadata
